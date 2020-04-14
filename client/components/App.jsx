@@ -1,4 +1,5 @@
 import React from 'react'
+import {headerCase} from 'header-case'
 
 import {getRankings} from '../api/ufc'
 
@@ -21,7 +22,7 @@ class App extends React.Component {
       <h1>UFC Rankings</h1>
       <div id='rankingsContainer'>
       {this.state.rankings.length > 0 ? 
-        this.state.rankings.map(ranking => <Rankings name={ranking.name} competitors={ranking.competitor_rankings}/>) : 
+        this.state.rankings.map(ranking => <Rankings name={headerCase(ranking.name)} competitors={ranking.competitor_rankings}/>) : 
         <h1>Loading</h1>}
       </div>
       </>
