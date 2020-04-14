@@ -2,6 +2,8 @@ import React from 'react'
 
 import {getRankings} from '../api/ufc'
 
+import Rankings from './Rankings'
+
 class App extends React.Component {
   state = {
     rankings: {}
@@ -17,7 +19,9 @@ class App extends React.Component {
     return (
       <>
       <h1>UFC Rankings</h1>
-      {this.state.rankings.length > 0 ? this.state.rankings.map(ranking => <h1>{ranking.name}</h1>) : <h1>Loading</h1>}
+      {this.state.rankings.length > 0 ? 
+        this.state.rankings.map(ranking => <Rankings name={ranking.name} competitors={ranking.competitor_rankings}/>) : 
+        <h1>Loading</h1>}
       </>
     )
   }
