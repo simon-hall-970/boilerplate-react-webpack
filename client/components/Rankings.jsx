@@ -13,7 +13,9 @@ class Rankings extends React.Component {
         return (
             <div className='ranking'>
             <h1 onClick={this.handleClick}>{this.props.name}</h1>
-            {this.state.expand ? this.props.competitors.map(competitor => <h2>{competitor.rank}: {competitor.competitor.name}</h2>) : <h2></h2>}
+            {this.state.expand ? 
+                this.props.competitors.map(competitor => 
+                    <h2 className='name'>{competitor.rank}: {competitor.competitor.name}</h2>) : <h2></h2>}
             </div>
         )
     }

@@ -4,6 +4,7 @@
 body {
     background-color: red;
     font-family: 'Audiowide', cursive;
+    text-align: center;
 }
 
 #rankingsContainer {
@@ -20,4 +21,18 @@ body {
     border-radius: 10px;
     background-color: white;
     width: 450px;
+}
+
+.ranking:hover {
+    background-color: rgb(238, 180, 180);
+    cursor: pointer;
+}
+
+.name {
+    border-radius: 10px;
+}
+
+.name:hover {
+    font-weight: bold;
+    background-color: aliceblue;
 }
