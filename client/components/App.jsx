@@ -23,7 +23,7 @@ class App extends React.Component {
       <div id='rankingsContainer'>
       {this.state.rankings.length > 0 ? 
         this.state.rankings.map(ranking => <Rankings name={headerCase(ranking.name)} competitors={ranking.competitor_rankings}/>) : 
-        <h1>Loading</h1>}
+        <img src='images/infinity-1s-200px (2).png' />}
       </div>
       </>
     )
