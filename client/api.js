@@ -7,3 +7,9 @@ export function getRandom() {
   .get(baseURL + 'activity')
   .then(res => res.body)
 }
+
+export function getFiltered(filter) {
+  return request
+  .get(baseURL + 'activity?type=' + filter)
+  .then(res => res.body)
+}

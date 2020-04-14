@@ -1,5 +1,5 @@
 import React from 'react'
-import { getRandom } from '../api'
+import { getRandom, getFiltered } from '../api'
 
 import Control from './Control'
 import Details from './Details'
@@ -10,21 +10,40 @@ class App extends React.Component {
 
     this.state = {
       activity: {},
-      details: false
+      details: false,
+      filter: ''
     }
 
   }
   componentDidMount() {
-    this.random()
+    this.getSuggestion()
   }
 
-  random() {
-    getRandom()
-    .then(activity => {
-      this.setState({
-        activity: activity
+  getSuggestion() {
+
+    if(this.state.filter != '' && this.state.filter != 'random') {
+      getFiltered(this.state.filter)
+      .then(activity => {
+        this.setState({
+          activity: activity
+        })
       })
+    } else {
+      getRandom()
+      .then(activity => {
+        this.setState({
+          activity: activity
+        })
+      })
+    }
+  }
+
+  handleChange = e => {
+    this.setState({
+      filter: e.target.value
     })
+
+    getFiltered(this.state.filter)
   }
 
   details = e => {
@@ -45,7 +64,7 @@ class App extends React.Component {
           }
         </div>
         <div className='control-container'>
-          <Control onClick={() => this.random()}/>
+          <Control onClick={() => this.getSuggestion()} onChange={this.handleChange}/>
         </div>
       </>
 
