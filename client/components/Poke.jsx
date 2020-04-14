@@ -12,7 +12,7 @@ class Poke extends React.Component {
         {/* {iss.velocity && <p>The velocity is: {iss.velocity}</p>} */}
         {Object.keys(poke).map(key => {
           return (
-            <p>The {key} is: {poke[key]}</p>
+            <p>The {key} is: <a href={poke[key]}>{poke[key]}</a></p>
           )
         })}
       </>
