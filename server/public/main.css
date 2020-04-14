@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+
+body {
+    background-color: red;
+    font-family: 'Audiowide', cursive;
+}
+
+#rankingsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ranking {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: white;
+    width: 450px;
+}

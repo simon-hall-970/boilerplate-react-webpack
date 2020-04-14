@@ -19,9 +19,11 @@ class App extends React.Component {
     return (
       <>
       <h1>UFC Rankings</h1>
+      <div id='rankingsContainer'>
       {this.state.rankings.length > 0 ? 
         this.state.rankings.map(ranking => <Rankings name={ranking.name} competitors={ranking.competitor_rankings}/>) : 
         <h1>Loading</h1>}
+      </div>
       </>
     )
   }
