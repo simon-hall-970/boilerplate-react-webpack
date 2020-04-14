@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       activity: {},
       details: false,
-      filter: ''
+      filter: 'random'
     }
 
   }
@@ -21,7 +21,7 @@ class App extends React.Component {
 
   getSuggestion() {
 
-    if(this.state.filter != '' && this.state.filter != 'random') {
+    if(this.state.filter != 'random') {
       getFiltered(this.state.filter)
       .then(activity => {
         this.setState({

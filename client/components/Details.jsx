@@ -9,7 +9,7 @@ class Details extends React.Component {
   render() {
     return (
       <>
-        {this.props.link && <p>{this.props.link}</p>}
+        {this.props.link && <a href={this.props.link}>{this.props.link}</a>}
         <p>Participants: {this.props.participants}</p>
         <p>Type: {this.props.type}</p>
       </>
