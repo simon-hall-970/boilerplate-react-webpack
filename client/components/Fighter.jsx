@@ -16,15 +16,17 @@ class Fighter extends React.Component {
     }
 
     render() {
+        const record = this.state.fighter.record
         return (
             <>
-            <img className='fighter' src='images/fighter.jpg' />
+            <img className='fighterPic' src='images/fighter.jpg' />
             {this.state.fighter.info ? 
-                <>
+                <div className='fighterInfo'>
                 <h1>{this.state.fighter.competitor.name}</h1> 
                 <h2>Nickname: {this.state.fighter.info.nickname}</h2>
                 <h2>Weight: {this.state.fighter.info.weight}</h2>
-                </>
+                <h1>Record: {record.wins}-{record.losses}-{record.draws}</h1>
+                </div>
                 : 
                 <img src='images/infinity-1s-200px (2).png' />}
             </>

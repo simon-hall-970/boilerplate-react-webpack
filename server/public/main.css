@@ -47,10 +47,18 @@ body {
     background-color: aliceblue;
 }
 
-.fighter {
+.fighterPic {
     border: 3px black solid;
     border-radius: 20px;
     width: 300px;
     display: block;
     margin: 10px auto;
+}
+
+.fighterInfo {
+    border: 2px black solid;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
 }
