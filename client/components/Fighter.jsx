@@ -9,7 +9,7 @@ class Fighter extends React.Component {
 
 
     componentDidMount() {
-        getFighter('sr:competitor:253371').then(fighter => {
+        getFighter(this.props.match.params.id).then(fighter => {
             console.log(fighter)
             this.setState({'fighter': fighter})
         })
