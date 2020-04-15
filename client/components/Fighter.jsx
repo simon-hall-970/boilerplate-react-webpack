@@ -17,8 +17,17 @@ class Fighter extends React.Component {
 
     render() {
         return (
-            <h1></h1>
-            // <h1>{this.state.fighter.competitor.name}</h1>
+            <>
+            <img className='fighter' src='images/fighter.jpg' />
+            {this.state.fighter.info ? 
+                <>
+                <h1>{this.state.fighter.competitor.name}</h1> 
+                <h2>Nickname: {this.state.fighter.info.nickname}</h2>
+                <h2>Weight: {this.state.fighter.info.weight}</h2>
+                </>
+                : 
+                <img src='images/infinity-1s-200px (2).png' />}
+            </>
         )
     }
 }

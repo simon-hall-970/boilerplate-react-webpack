@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 body {
-    background-color: red;
+    background-color: rgb(196, 36, 36);
     font-family: 'Audiowide', cursive;
     text-align: center;
 }
@@ -45,4 +45,12 @@ body {
 .name:hover {
     font-weight: bold;
     background-color: aliceblue;
+}
+
+.fighter {
+    border: 3px black solid;
+    border-radius: 20px;
+    width: 300px;
+    display: block;
+    margin: 10px auto;
 }
