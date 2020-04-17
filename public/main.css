@@ -1,5 +1,10 @@
 *{
-  font-family: 'Manrope', sans-serif;;
+  font-family: 'Crimson Text', serif;
+}
+
+body{
+  margin: 0;
+  padding: 0;
 }
 
 .title{
@@ -23,44 +28,52 @@
 .cardsList{
   background-color: rgba(100, 175, 200, 0.700);
   border: 1px solid black;
-  width: 45%;
+  width: 50%;
   height: 100vh;
   overflow: scroll;
 }
 
 .cardsList table {
-  border-collapse: collapse;
+  border: 12.5px rgb(50, 50, 50) solid;
+  border-radius: 3px;
+  background: linear-gradient(to right,rgb(234,217,59), rgb(243,229,97), rgb(214,200,71), rgb(221,201,35));
 }
 
-.cardsList thead{
+.cardHead{
+  border: 1px solid black;
+}
+
+.cardsList table thead tr{
   font-size: larger;
   font-weight: bolder;
 }
 
-.cardsList tbody td{
+.cardsList table thead tr td{
+  background: url('./images/card_header.png');
+  text-align: center;
+  border: 2px outset;
   padding: 2.5px;
+  border-radius: 4px;
+}
+
+.cardsList tbody td{
   font-size: 1.15rem;
+  text-align: center;
 }
 
-.cardsList thead td{
-  text-align: center;
-  border: 1px solid black;
-}
-
-.cardsList tbody td:nth-of-type(1) {
-  text-align: center;
+.cardsList tbody td:nth-of-type(1), .cardsList tbody td:nth-of-type(3) a{
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 .cardsList tbody td:nth-of-type(4) {
-  text-align: center;
   color: brown;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
 }
 
 .cardsList tbody td:nth-of-type(5) {
-  text-align: center;
   color: rgb(18, 88, 50);
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .cardsList tbody tr td img{
@@ -68,8 +81,12 @@
   height: 150px;
 }
 
+#cardType{
+  border: none;
+}
+
 /* CARDS DEATAIL STYLE */
 .cardDetail{
   border: solid 1px black;
-  width: 55%;
+  width: 50%;
 }

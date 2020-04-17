@@ -1,17 +1,13 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {getCards} from '../apis/cards'
+
 
 class CardsList extends React.Component{
-  constructor(){
-    super()
-  }
-
-  handleClick = (event) =>{
-    event.preventDefault()
-    getCards()
-    .then(this.props.loading)
-    .catch(err => this.setState({errorMessage: err.message}))
+  constructor(props){
+    super(props)
+    this.state = {
+      cards: {}
+    }
   }
 
   render(){
@@ -32,14 +28,14 @@ class CardsList extends React.Component{
     //     }
     //   })
     // }
-    // cards.map(item =>{
-    //   console.log(item)
+    // cards.map(card =>{
+    //   console.log(card)
     // })
     return(
       <div className="cardsList">
-      {/* {dragonCards.map((item, i)=>{
+      {/* {dragonCards.map((card, i)=>{
         return(
-          <img key={i} src={item} alt={`Card ${i}`}/>
+          <img key={i} src={card} alt={`Card ${i}`}/>
         )
       })} */}
         <table>
@@ -49,18 +45,38 @@ class CardsList extends React.Component{
               <td>Card Images</td>
               <td>Card ID</td>
               <td>Name</td>
-              <td>Type</td>
+              <td>
+                  <select name="type" id="cardType">
+                    <option value="">CARD TYPE</option>
+                    <option value="Spell Card">Spell</option>
+                    <option value="Trap Card">Trap</option>
+                    <option value="Effect Monster">Effect Monster</option>
+                    <option value="Normal Monster">Normal Monster</option>
+                    <option value="Spirit Monster">Spirit Monster</option>
+                    <option value="Flip Effect Monster">Flip Effect Monster</option>
+                    <option value="Union Effect Monster">Union Effect Monster</option>
+                    <option value="Fusion Monster">Fusion Monster</option>
+                    <option value="Ritual Effect Monster">Ritual Effect Monster</option>
+                    <option value="Pendulum Effect Monster">Pendulum Effect Monster</option>
+                    <option value="Link Monster">Link Monster</option>
+                    <option value="XYZ Monster">XYZ Monster</option>
+                    <option value="Synchro Tuner Monster">Synchro Tuner Monster</option>
+                    <option value="Tuner Monster">Tuner Monster</option>
+                    <option value="Normal Tuner Monster">Normal Tuner Monster</option>
+                    <option value="Synchro Monster">Synchro Monster</option>
+                  </select>
+                </td>
             </tr>
           </thead>
           <tbody>
-            {cards.map((item, i)=>{
+            {cards.map((card, i)=>{
             return(
               <tr key={i}>
                 <td>{i}</td>
-                {(item.card_images) ? <td><img src={item.card_images[0].image_url_small} alt=""/></td>: undefined}
-                <td><Link onClick={this.handleClick} to="/">{item.id}</Link></td>
-                <td>{item.name}</td>
-                <td>{item.type}</td>
+                {(card.card_images) ? <td><img src={card.card_images[0].image_url_small} alt=""/></td>: undefined}
+                <td><Link onClick={()=>{this.props.handleClick(card)}}>{card.id}</Link></td>
+                <td>{card.name}</td>
+                <td>{card.type}</td>
               </tr>
             )
             })}

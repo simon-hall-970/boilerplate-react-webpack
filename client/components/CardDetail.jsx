@@ -2,25 +2,28 @@ import React from 'react'
 import {getCards} from '../apis/cards'
 
 class CardDetail extends React.Component{
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
-
+      card: {}
     }
   }
+
   render(){
-    const cards = this.props.cards;
-    const cardsImages = []
-    for(let i=0; i <cards.length; i++){
-      Object.keys(cards[i]).map(key =>{
-        if(key == 'card_images'){
-          cardsImages.push(cards[i]['card_images'][0].image_url)
-        }
-      })
-    }
+    console.log(this.props.card)
+    console.log(this.props)
+    const card = this.props.card
     return(
       <div className="cardDetail">
-        
+        {(card == undefined) ? <h1>Choose a card</h1> : 
+        <div>
+          <h1>{card.name}</h1>
+          <h3>Card Type: {card.type}</h3>
+          <h3>Card Race: {card.race}</h3>
+          <img src={card.card_images[0].image_url} alt={card.name}/>
+          <p>{card.desc}</p>
+        </div>
+        }
       </div>
     )
   }

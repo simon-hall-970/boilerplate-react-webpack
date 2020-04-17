@@ -21,8 +21,14 @@ class App extends React.Component{
     getCards()
     .then(cards=>{
       this.setState({
-        cards: cards
+        cards: cards,
       })
+    })
+  }
+
+  handleClick = (card) =>{
+    this.setState({
+      card: card
     })
   }
 
@@ -36,8 +42,8 @@ class App extends React.Component{
             <img className="animated zoomIn slow" src="/images/yugioh.png" alt="Yugioh title"/>
           </div>
           <div className="cardsInfo">
-            <CardsList cards={this.state.cards} loading={this.loading}/>
-            <CardDetail cards={this.state.cards} loading={this.loading}/>
+            <CardsList handleClick={this.handleClick} cards={this.state.cards} loading={this.loading}/>
+            <CardDetail card={this.state.card}/>
           </div>
         </Route>
       </Router>
