@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+require('../public/main.css')
 
 import App from './components/App'
 
